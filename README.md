@@ -30,7 +30,7 @@
  - Rode o comando na pasta raiz:
 ```go run main.go```<br><br>
 
- - Na pasta **front-go**, rode oos comandos: <br> 
+ - Na pasta **front-go**, rode os comandos: <br> 
 ```npm update```<br>
 ```npm start```
 
