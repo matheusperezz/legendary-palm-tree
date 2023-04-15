@@ -12,7 +12,7 @@ var (
 )
 
 func ConnectToDatabase() {
-	connectionString := "user=postgres dbname=cars password=*** host=localhost sslmode=disable"
+	connectionString := "user=postgres dbname=cars password=root host=localhost sslmode=disable"
 	DB, err = gorm.Open(postgres.Open(connectionString))
 	if err != nil {
 		fmt.Println(err)

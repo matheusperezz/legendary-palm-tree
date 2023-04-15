@@ -4,14 +4,9 @@ import (
 	"api-go-rest/database"
 	"api-go-rest/models"
 	"encoding/json"
-	"fmt"
 	"github.com/gorilla/mux"
 	"net/http"
 )
-
-func Home(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Home Page")
-}
 
 func AllCars(w http.ResponseWriter, r *http.Request) {
 	var cars []models.Car
