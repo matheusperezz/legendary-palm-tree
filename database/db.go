@@ -1,9 +1,11 @@
 package database
 
 import (
+	"api-go-rest/models"
 	"fmt"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	"os"
 )
 
 var (
@@ -12,10 +14,15 @@ var (
 )
 
 func ConnectToDatabase() {
-	connectionString := "user=postgres dbname=cars password=root host=localhost sslmode=disable"
+	password := os.Getenv("DATABASE_PASSWORD")
+	connectionString := "user=postgres dbname=carchase password=" + password + " host=localhost sslmode=disable"
 	DB, err = gorm.Open(postgres.Open(connectionString))
 	if err != nil {
 		fmt.Println(err)
+		return
+	}
+	err := DB.AutoMigrate(&models.User{}, &models.Car{})
+	if err != nil {
 		return
 	}
 }
